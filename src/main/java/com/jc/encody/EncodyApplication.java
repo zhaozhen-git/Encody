@@ -13,8 +13,8 @@ public class EncodyApplication extends SpringBootServletInitializer {
     }
 
 
-    @Override
-    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
-        return builder.sources(new Class[] { EncodyApplication.class });
-    }
+//    @Override
+//    protected SpringApplicationBuilder configure(SpringApplicationBuilder builder){
+//        return builder.sources(new Class[] { EncodyApplication.class });
+//    }
 }
