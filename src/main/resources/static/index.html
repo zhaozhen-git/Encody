@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加密解密</title>
+</head>
+<body>
+<div style="margin:10px;"><label>请输入14位数字：</label><input type="text" style="height: 30px;width:180px;padding: 6px" id="data" placeholder="格式为:20190618XXXXXX"><button id="button" style="margin-left: 5px;height:30px">加密|解密</button></div>
+<div style="margin: 10px"><label>得到：</label><input id="test" style="height: 30px;width:180px;padding: 6px"></div>
+</body>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script>
+    $("#button").click(function () {;
+        var data = $("#data").val();
+        if(data.length!=8){
+            alert("输入得数字不等于8位,当前为"+data.length+"位");
+        }else{
+            var size = data.length;
+            var arr =new Array();
+            for(var i=0;i<size;i++){
+                arr[i] = data.charAt(i);
+            }
+            //加密
+            data = jiami(arr,1);
+            $("#test").val(data);
+        }
+    });
+    
+    
+    function jiami(arr,a) {
+        for(var i=0;i<arr.length;i++){
+            arr[i]=(arr[i]^a);
+        }
+        var data = "";
+        for(var i=0;i<arr.length;i++){
+            data += arr[i];
+        }
+        return data;
+    }
+</script>
+</html>
